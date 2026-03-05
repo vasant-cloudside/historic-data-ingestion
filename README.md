@@ -114,5 +114,5 @@ Content type: application/jsonlines
 
 The output file contains all records from 2025 and 2026 appended sequentially — 2025 records appear first followed by 2026 records, matching the order of SOURCE_PREFIXES in the script configuration.
 
-The JSONL format is directly compatible with BigQuery’s bq load command using --source_format=NEWLINE_DELIMITED_JSON and the schema defined in Section 3.
+The JSONL format is directly compatible with BigQuery’s bq load command using --source_format=NEWLINE_DELIMITED_JSON.
 
