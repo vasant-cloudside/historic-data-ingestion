@@ -1,10 +1,10 @@
-# 🚀 IoT Event Data Pipeline — JSON → JSONL Conversion
+#  IoT Event Data Pipeline — JSON → JSONL Conversion
 
 > Batch pipeline that converts raw IoT event JSON files from Google Cloud Storage into schema-filtered JSONL files ready for BigQuery ingestion.
 
 ---
 
-## 📋 Project Info
+##  Project Info
 
 | Field | Details |
 |---|---|
@@ -16,7 +16,7 @@
 
 ---
 
-## 📖 Overview
+##  Overview
 
 This pipeline converts raw IoT event JSON files stored in GCS into consolidated, schema-filtered JSONL files suitable for ingestion into BigQuery. It covers all asset records across the years **2025 and 2026**, combining them into per-asset output files appended in chronological order.
 
@@ -25,7 +25,7 @@ This pipeline converts raw IoT event JSON files stored in GCS into consolidated,
 
 ---
 
-## 🏗️ Pipeline Architecture
+##  Pipeline Architecture
 
 ### High-Level Flow
 
@@ -66,7 +66,7 @@ The parser handles three JSON file layouts **without any configuration**:
 
 ---
 
-## 🗂️ Output Schema
+##  Output Schema
 
 Only the fields listed below are extracted and written to the output. All other fields in the source JSON are discarded.
 
@@ -91,7 +91,7 @@ Only the fields listed below are extracted and written to the output. All other 
 
 ---
 
-## 🔄 Type Casting Rules
+##  Type Casting Rules
 
 Each field value is cast to its BigQuery type before being written to output:
 
@@ -106,7 +106,7 @@ Each field value is cast to its BigQuery type before being written to output:
 
 ---
 
-## ⚙️ Configuration Parameters
+##  Configuration Parameters
 
 | Parameter | Default | Description |
 |---|---|---|
@@ -120,7 +120,7 @@ Each field value is cast to its BigQuery type before being written to output:
 
 ---
 
-## 🔑 Key Functions
+##  Key Functions
 
 ### `discover_assets(client)`
 Lists all unique asset folder names under `iot-event-data/` using GCS delimiter listing. Returns a sorted list of asset IDs without fetching all blob metadata.
@@ -142,7 +142,7 @@ Uploads the completed local JSONL temp file to GCS using `upload_from_filename()
 
 ---
 
-## 🔀 Execution Flow
+##  Execution Flow
 
 ```
 1.  storage.Client() initialised once in main()
@@ -163,7 +163,7 @@ Uploads the completed local JSONL temp file to GCS using `upload_from_filename()
 
 ---
 
-## 🐛 Known Issues & Resolutions
+##  Known Issues & Resolutions
 
 | Issue Observed | Fix Applied |
 |---|---|
@@ -175,7 +175,7 @@ Uploads the completed local JSONL temp file to GCS using `upload_from_filename()
 
 ---
 
-## 🚦 Running the Pipeline
+##  Running the Pipeline
 
 ### Prerequisites
 
@@ -208,7 +208,7 @@ The script logs progress every **500 files** within a batch and at the end of ea
 
 ---
 
-## 📦 Output Files
+##  Output Files
 
 | Property | Value |
 |---|---|
@@ -221,7 +221,7 @@ Records from 2025 appear before 2026 in each output file, matching the `SOURCE_P
 
 ---
 
-## 📊 Final Run Summary (Example)
+##  Final Run Summary (Example)
 
 ```
 ======================================================================
