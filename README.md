@@ -3,10 +3,9 @@ JSON → JSONL Conversion  |
 
 Project: Datoms POC — Historic IoT Event Data
 
-Source Bucket
-gs://datoms-poc-bkt-historic-data/iot-event-data/
-Destination Bucket
-gs://datoms-poc-bkt-historic-data-temp/jsonl_files/
+Source Bucket `gs://datoms-poc-bkt-historic-data/iot-event-data/`
+
+Destination Bucket `gs://datoms-poc-bkt-historic-data-temp/jsonl_files/`
 
 Total Records
 ~890,000 across 2025 and 2026
